@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Design System — generated from Design_System.xlsx
+   Sheets: Colors, Spacing, Typography, Radius & Shadows, Z-Index
+   ============================================================ */
+@theme {
+  /* ---- Colors: Theme ---- */
+  --color-primary: #4338CA;
+  --color-primary-tint: #EEE9FB;
+  --color-surface-white: #FFFFFF;
+  --color-surface-offwhite: #F9FAFB;
+  --color-surface-canvas: #F3F4F6;
+
+  /* ---- Colors: Status ---- */
+  --color-success: #22C55E;
+  --color-success-tint: #DCFCE7;
+  --color-warning: #F97316;
+  --color-warning-tint: #FFEDD5;
+  --color-error: #EF4444;
+  --color-error-tint: #FEE2E2;
+  --color-info: #3B82F6;
+  --color-info-tint: #DBEAFE;
+
+  /* Back-compat alias so existing brand-* utility classes keep working,
+     mapped onto the design system's primary color */
+  --color-brand-50: #EEE9FB;
+  --color-brand-100: #DDD3F7;
+  --color-brand-200: #C2B2EF;
+  --color-brand-300: #A488E4;
+  --color-brand-400: #7C63D6;
+  --color-brand-500: #5A47CB;
+  --color-brand-600: #4338CA;
+  --color-brand-700: #362DA3;
+  --color-brand-800: #2C2682;
+  --color-brand-900: #251F69;
+
+  /* ---- Spacing ---- */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+
+  /* ---- Typography ----
+     Tailwind v4 font-size utilities are generated from the --text-* namespace
+     (e.g. --text-h1 produces the `text-h1` class). --font-size-* is NOT the
+     correct namespace and silently produces no utility. */
+  --text-h1: 2.986rem;
+  --text-h2: 2.488rem;
+  --text-h3: 2.074rem;
+  --text-h4: 1.728rem;
+  --text-h5: 1.440rem;
+  --text-h6: 1.200rem;
+  --text-p: 1.000rem;
+  --text-sm: 0.833rem;
+  --text-xs: 0.694rem;
+
+  /* ---- Radius ---- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 9999px;
+  --radius-full: 50%;
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+}
+
+/* ---- Z-Index scale (referenced as plain CSS vars, not Tailwind utilities) ---- */
+:root {
+  --z-base: 0;
+  --z-sticky: 100;
+  --z-dropdown: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-tooltip: 500;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-surface-canvas);
+  font-size: var(--text-p);
+}
+
+/* Note: heading tags are intentionally NOT given a default font-size here —
+   <h1>/<h2> etc are used throughout for semantic structure, but their visual
+   size is controlled per-instance via text-h1..text-h6 utility classes so a
+   page title can be an <h1> styled at h5 scale without affecting every h1. */
+
+/* Roster matrix scrollbar */
+.roster-scroll::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.roster-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: var(--radius-sm);
+}
